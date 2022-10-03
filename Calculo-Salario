@@ -1,0 +1,19 @@
+//Arthur Pinheiro da Mota 8087081
+
+#include <stdio.h>
+
+int main (){
+  float salario_mes, hora_mes, salario_hora;
+
+  printf ("Insira o salario por hora: \n");
+  scanf ("%f", &salario_hora);
+
+  printf ("Insira horas por mes: \n");
+  scanf ("%f", &hora_mes);
+
+  salario_mes = salario_hora * hora_mes;
+
+  printf ("Salario ganho no mes: %.2f", salario_mes);
+
+  return 0;
+}
