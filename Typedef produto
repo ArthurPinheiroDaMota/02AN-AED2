@@ -1,0 +1,36 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota 03/10/2022
+
+Programa cria o tipo de dado estrutura produto, em seguida imprime os valores
+desse tipo de dado informado pelo usuario
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+typedef struct{
+    long codigo;
+    char nome[30];
+    float preco;
+}produto;
+
+int main()
+{
+    produto prod;
+    
+    printf("Informe os dados do produto (codigo, nome, e preco): \n");
+    scanf("%ld", &prod.codigo);
+    scanf("%s", prod.nome);
+    scanf("%f", &prod.preco);
+    
+    printf("Dados do produto: ");
+    printf("%ld %s %.2f \n", prod.codigo, prod.nome, prod.preco);
+    
+    if(prod.preco < 4){
+        printf("Produto em promocao");
+    }
+    else{
+        printf("Produto cadastrado");
+    }
+}
