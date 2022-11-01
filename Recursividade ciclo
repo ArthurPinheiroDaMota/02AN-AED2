@@ -1,0 +1,25 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota 31/10/2022
+
+Programa utiliza uma funcao recursiva para imprimir valores entre dois numeros
+informados pelo usuario
+
+*******************************************************************************/
+#include <stdio.h>
+
+void ciclo(int n, int limite);
+
+int main()
+{
+    ciclo(2,10);
+}
+
+void ciclo(int n, int limite){
+    
+    printf("%i\n", n);
+    
+    if(n < limite){
+        ciclo(n+1, limite);
+    }
+}
