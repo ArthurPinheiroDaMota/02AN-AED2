@@ -1,0 +1,32 @@
+/******************************************************************************
+
+ Arthur Pinheiro da Mota
+ 
+ Programa verifica se o valor passado se encontra entre "a" e "z" de acordo
+ com a tabela ASCII
+
+*******************************************************************************/
+#include <stdio.h>
+
+void comparaValor(char n);
+
+int main()
+{
+    char n;
+    
+    printf("Informe um caractere:\n");
+    scanf("%c", &n);
+    
+    comparaValor(n);
+
+    return 0;
+}
+
+void comparaValor(char n){
+    if(n>=97 && n<=122){
+        printf("O caractere se encontra entre a e z");
+    }
+    else{
+       printf("O caractere nao se encontra entre a e z"); 
+    }
+}
