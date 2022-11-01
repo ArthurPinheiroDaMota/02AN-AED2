@@ -1,0 +1,70 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota 26/09/2022
+
+Programa utiliza um struct para criar o tipo de dado aluno, em seguida calcula 
+a média de varios alunos e imprime os dados de cada um
+
+*******************************************************************************/
+#include <stdio.h>
+#define TOTAL 2
+
+ float calculamedia( float N1, float N2)
+{
+    float md;
+    md = (N1 + N2)/2;
+    return (md);
+}
+
+
+int main() {
+    
+    float mediaSala = 0;
+    
+    struct estruturaAluno{
+        int matricula;
+        float N1;
+        float N2;
+        float media;
+    };
+    struct estruturaAluno aluno[TOTAL];
+    
+    printf( "||||||||||||||||||||DADOS DOS ALUNOS||||||||||||||||||| \n\n");
+    for(int i = 0; i<TOTAL; i++){
+        
+        printf( "Matrícula do aluno: ");
+        scanf ("%d" ,&aluno[i].matricula);
+        printf( "Nota N1: ");
+        scanf ("%f", &aluno[i].N1);
+        printf( "Nota N2: ");
+        scanf ("%f", &aluno[i].N2);
+        
+        aluno[i].media = calculamedia(aluno[i].N1,aluno[i].N2);
+        mediaSala += aluno[i].media;
+    }
+    
+    mediaSala /= TOTAL;
+
+    printf( "\n||||||||||||||||||||BOLETIM DOS ALUNOS||||||||||||||||||||\n");
+    
+    for(int i = 0; i<TOTAL; i++){
+        
+        printf("\nAluno %i:", aluno[i].matricula);
+        printf( "\nNota N1: %.1f", aluno[i].N1);
+        printf( "\nNota N2: %.1f", aluno[i].N2);
+        
+        if(aluno[i].media < mediaSala){
+            printf( "\nMedia..: %.1f (Abaixo da media)", aluno[i].media);
+        }
+        else{
+            printf( "\nMedia..: %.1f (Acima da media)", aluno[i].media);
+        }
+        
+    }
+    
+    printf( "\n||||||||||||||||||||DADOS DA SALA||||||||||||||||||||\n");
+    printf( "\nQuantidade de alunos: %i", TOTAL);
+    printf( "\nMedia da sala: %.1f", mediaSala);
+
+    return (0);
+}
