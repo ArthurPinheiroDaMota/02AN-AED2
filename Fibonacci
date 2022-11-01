@@ -1,0 +1,44 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota
+
+Programa realiza a sequencia de fibonacci de acordo com o valor passado pelo usuario
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+void fibonacci(int n);
+
+int main()
+{
+    int n;
+    printf("Informe a quantidade: \n");
+    scanf("%i", &n);
+    
+    fibonacci(n);
+}
+
+void fibonacci(int n){
+    
+    int a=1, b=1, fib=0, i;
+    
+    if(n == 1){
+        printf("%i ", a);
+    }
+    else if(n == 2){
+        printf("%i %i ", a, a);
+    }
+    else{
+        
+        printf("%i %i ", a, a);
+        
+        for(i=2; i<n; i++){
+            fib = a + b;
+            a = b;
+            b = fib;
+            
+            printf("%i ", fib);
+        }
+    }
+}
