@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota 31/10/2022
+
+Programa utiliza funcao recursiva para calcular o fatorial do valor informado
+pelo usuario
+
+*******************************************************************************/
+#include <stdio.h>
+
+int fatorial (int n);
+
+int main(){
+  int n = fatorial (4);
+
+  printf ("%i\n", n);
+}
+
+int fatorial(int n){
+  int aux;
+
+  if (n == 0)
+    {
+      aux = 1;
+    }
+  else
+    {
+      aux = n * fatorial (n - 1);
+    }
+
+  return aux;
+}
