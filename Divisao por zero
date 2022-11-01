@@ -1,0 +1,32 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota
+
+Programa realiza a divisao de dois valores, se o segundo valor for igual a zero,
+o programa pede outro valor
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    float valor_1, valor_2, resultado;
+    
+    printf("Informe dois valores:\n");
+    scanf("%f", &valor_1);
+    scanf("%f", &valor_2);
+    
+    if(valor_2 == 0){
+        while(valor_2 == 0){
+            printf("Segundo valor invalido, informe outro (diferente de zero):\n");
+            scanf("%f", &valor_2);
+        } 
+    }
+    
+    resultado = valor_1/valor_2;
+    
+    printf("Resultado: %.2f", resultado);
+
+    return 0;
+}
