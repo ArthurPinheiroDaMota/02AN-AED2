@@ -1,0 +1,29 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota
+
+Programa recebe tres valores e retorna o maior entre eles
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    float primeiro_numero, segundo_numero, terceiro_numero;
+    
+    printf("Digite 3 valores: \n");
+    scanf("%f", &primeiro_numero);
+    scanf("%f", &segundo_numero);
+    scanf("%f", &terceiro_numero);
+    
+    if(primeiro_numero > segundo_numero && primeiro_numero > terceiro_numero){
+        printf("O primeiro numero e maior");
+    }
+    else if(segundo_numero > primeiro_numero && segundo_numero > terceiro_numero){
+        printf("O segundo numero e maior");
+    }
+    else{
+        printf("O terceiro numero e maior");
+    }
+}
