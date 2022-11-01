@@ -1,0 +1,65 @@
+/******************************************************************************
+
+Arthur Pinheiro da Mota 10/10/2022
+
+Programa possui tres funcoes
+1 - le os dados informados pelo usuario e atribui isso ao array do tipo de dado 
+estrutura "banda"
+
+2 - Imprime os valores do array do tipo de dado banda
+
+3 - Pesquisa valor informado pelo usuario no array do tipo banda
+
+*******************************************************************************/
+#include <stdio.h>
+#define TAM 3
+
+typedef struct Banda
+{
+  char nome[30];
+  char estilo[10];
+} Banda;
+
+void leBanda(Banda *banda);
+void exibeBanda(Banda *banda);
+void buscaBanda(Banda *banda, char *estilo);
+
+int main (){
+  Banda banda[TAM];
+  char estilo[10];
+  
+  leBanda(banda);
+  
+  printf("\nInsira o estilo desejado: ");
+  scanf("%s", estilo);
+  
+  buscaBanda(banda, estilo);
+  exibeBanda(banda);
+
+  return 0;
+}
+
+void leBanda(Banda *banda){
+    for(int i = 0; i < TAM; i++){
+        printf("\nInsira o nome da banda: ");
+        scanf("%s", banda[i].nome);
+        printf("\nInsira o estilo da banda: ");
+        scanf("%s", banda[i].estilo);
+    }
+}
+
+void exibeBanda(Banda *banda){
+    for(int i = 0; i < TAM; i++){
+        printf("\nDados da banda: %i", i);
+        printf("\nNome: %s", banda[i].nome);
+        printf("\nEstilo: %s", banda[i].estilo);
+    }
+}
+
+void buscaBanda(Banda *banda, char *estilo){
+    for(int i = 0; i < TAM; i++){
+        if(strcmp(banda[i].estilo,estilo)==0){
+            printf("\nEstilo encontrado na banda: %s", banda[i].nome);
+        }
+    }
+}
