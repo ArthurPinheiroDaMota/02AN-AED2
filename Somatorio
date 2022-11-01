@@ -1,0 +1,34 @@
+/******************************************************************************
+
+ Arthur Pinheiro da Mota
+
+Programa realiza o somatorio da formula n vezes de acordo com o valor passado
+pelo usuario
+
+*******************************************************************************/
+#include <stdio.h>
+
+void somatorio(int n, int *soma);
+
+int main()
+{
+    int n, soma = 0;
+    
+    printf("Informe o valor n:\n");
+    scanf("%i", &n);
+    
+    somatorio(n, &soma);
+    printf("%i", soma);
+
+    return 0;
+}
+
+void somatorio(int n, int *soma){
+    
+    int i;
+    
+    for(i=1; i<=n; i++){
+        *soma += (5 * i * i + 2 * i + 8);
+    }
+    
+}
